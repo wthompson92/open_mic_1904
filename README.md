@@ -7,7 +7,8 @@
 * Compete the activity below
 * Push your solution to your fork
 * Submit a pull request from your repository to the turingschool-examples repository
-  * Make sure to put your name in your PR!
+  * Your name should be the title of the PR
+  * In the comment box, indicate which iteration you fully completed. If there is any specific question you have/feedback you'd like, please also note that there.
 
 ### Iteration 1
 
