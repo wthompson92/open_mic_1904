@@ -41,23 +41,26 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_welcome_method_adds_comics_to_open_mic
-    open_mic.welcome(@sal)
-    open_mic.welcome(@ali)
-    expected = [@ali, @sal]
+    @open_mic.welcome(@sal)
+    @open_mic.welcome(@ali)
+    expected = [@sal, @ali]
     actual = @open_mic.performers
     assert_equal actual, expected
   end
 
   def test_if_jokes_are_repeated
+    @open_mic.welcome(@sal)
+    @open_mic.welcome(@ali)
     @ali.learn(@joke_1)
     @ali.learn(@joke_2)
     expected = false
     actual = @open_mic.repeated_jokes?
     assert_equal expected, actual
 
-    ali.tell(@sal, @joke_1)
+    @ali.tell(@sal, @joke_1)
+    @ali.tell(@sal, @joke_1)
     expected = true
     actual = @open_mic.repeated_jokes?
     assert_equal expected, actual
-  end
+end
 end
