@@ -41,7 +41,7 @@ def test_user_can_tell_jokes_to_target
    @sal.tell(@ali, @joke_1)
    @sal.tell(@ali, @joke_2)
    expected = [@joke_1, @joke_2]
-   actual = @@ali.jokes
+   actual = @ali.jokes
    assert_equal expected, actual
 
  end
@@ -49,16 +49,15 @@ def test_user_can_tell_jokes_to_target
  def test_can_get_joke_id_from_user_joke
    @sal.tell(@ali, @joke_1)
    @sal.tell(@ali, @joke_2)
-   expected = @joke_1
+   expected = [@joke_1]
    actual = @ali.joke_by_id(1)
 
    assert_equal expected, actual
 
-   expected = @joke_2
-   actual = @ali.joke_by_id(1)
+   expected = [@joke_2]
+   actual = @ali.joke_by_id(2)
 
    assert_equal expected, actual
  end
 
- end
 end
